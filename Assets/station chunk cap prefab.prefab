@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: station chunk cap prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6907129509189424509, guid: f4d58f1e33dd63c418da66b5af889a65, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8bf51fbdaa89b254fb0d5d8eec1d6687, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
