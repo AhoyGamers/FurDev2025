@@ -8,15 +8,17 @@ using UnityEngine.UI;
 
 //Followed along with https://www.youtube.com/watch?v=_nRzoTzeyxU&t=2s
 // 
-public class DialogPanel : MonoBehaviour
+public class DialogManager : MonoBehaviour
 {
     private string outputText = "Hello world! I am a demo string, here to bring you joy! Get rid of me when we add more dialog!";
     [SerializeField] TMP_Text dialogText;
     [SerializeField] TMP_Text nameText;
-    [SerializeField] float printSpeed = 1f;
     [SerializeField] Dialog dialogObject;
     [SerializeField] Button continueButton;
-    [SerializeField] Queue<string> dialogSentences;
+    [SerializeField] GameObject dialogPanel;
+    Queue<string> dialogSentences;
+
+    [SerializeField] float printSpeed = 1f;
     void Start()
     {
         //just a little prep work before we display anything.
@@ -62,6 +64,7 @@ public class DialogPanel : MonoBehaviour
         {
             dialogSentences.Enqueue(s);
         }
+        dialogPanel.SetActive(true);
         DisplayNextSentence();
         Debug.Log("We have: " + dialogSentences.Count + " sentences!");
     }
@@ -83,7 +86,7 @@ public class DialogPanel : MonoBehaviour
     {
         Debug.Log("Ending Dialog");
         ClearDialogText();
-        this.gameObject.SetActive(false);
+        dialogPanel.SetActive(false);
     }
 
 }
