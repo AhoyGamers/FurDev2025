@@ -36,7 +36,7 @@ public class CharacterController : MonoBehaviour
         //Calculate how much the character should rotate based on mouse movement
         yRotation += mouseX;
         xRotation -= mouseY;
-        Mathf.Clamp(xRotation, -90f, 90f); //Prevent player from looking farther than straight up or down.
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f); //Prevent player from looking farther than straight up or down.
 
         //Actually apply the transformation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);

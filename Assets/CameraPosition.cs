@@ -150,6 +150,18 @@ public class CameraPosition : MonoBehaviour{
         }
     }
 
+    public void setActivity(bool enabled)
+    {
+        if (enabled)
+        {
+            activity = 1;
+        }
+        else
+        {
+            activity = 0;
+        }
+    }
+
     /// <summary>
     /// Callback to draw gizmos that are pickable and always drawn.
     /// </summary>

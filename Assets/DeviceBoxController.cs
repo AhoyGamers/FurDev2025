@@ -38,6 +38,7 @@ public class DeviceBoxController : MonoBehaviour{
 
     public void SetSelected(bool selected){
         this.selected = selected;
+        cameraPosition.setActivity(selected);
         if(selected) Open();
         else Close();
     }

@@ -83,6 +83,7 @@ public class ObjectClicker : MonoBehaviour{
     void setSelectedObject(GameObject gameObject){
         if(selectedObject){
             selectedObject.SendMessage("SetSelected", false);
+
             /*
             Outline selectOutline = selectedObject.GetComponentInChildren<Outline>();
             if(selectOutline){
@@ -92,7 +93,7 @@ public class ObjectClicker : MonoBehaviour{
         }
         selectedObject = gameObject;
         if(selectedObject){
-            selectedObject.SendMessage("SetSelected", true);
+            selectedObject.SendMessage("SetSelected", true); //Calls the "SetSelected" function on the DeviceBoxController that was clicked.
             /*
             Outline selectOutline = selectedObject.GetComponentInChildren<Outline>();
             if(selectOutline){

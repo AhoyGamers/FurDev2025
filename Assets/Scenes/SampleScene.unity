@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6a91a80f8e02d4e9aa3d4e75c4f567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1387063711}
   characterCamPosition: {fileID: 2000392073}
 --- !u!114 &330585551
 MonoBehaviour:
