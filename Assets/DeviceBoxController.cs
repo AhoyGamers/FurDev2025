@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeviceBoxController : MonoBehaviour{
     [SerializeField] Animator animator;
     [SerializeField] bool selected;
+    [SerializeField] CameraPosition cameraPosition;
 
 
     // Start is called before the first frame update
