@@ -728,7 +728,7 @@ MonoBehaviour:
   confirmbutton: {fileID: 1791854076}
   setButton: {fileID: 1242987950}
   unSetButton: {fileID: 704628372}
-  answerLight: {fileID: 0}
+  answerLight: {fileID: 1490853645}
 --- !u!4 &1585757719
 Transform:
   m_ObjectHideFlags: 0
