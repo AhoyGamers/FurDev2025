@@ -1,3 +1,8 @@
+/*
+ * DeviceBoxController
+ * The physical box gameObjects that, when clicked, open up and reveal the minigame inside.
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +10,7 @@ using UnityEngine;
 public class DeviceBoxController : MonoBehaviour{
     [SerializeField] Animator animator;
     [SerializeField] bool selected;
-    [SerializeField] CameraPosition cameraPosition;
+    [SerializeField] CameraPosition cameraPosition; //Which cameraPosition object actually looks at this DeviceBox.
 
 
     // Start is called before the first frame update

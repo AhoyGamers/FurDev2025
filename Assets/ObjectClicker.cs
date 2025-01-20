@@ -17,6 +17,11 @@ public class ObjectClicker : MonoBehaviour{
         
     }
 
+    public bool hasSelectedObject()
+    {
+        return (selectedObject != null);
+    }
+
     // Update is called once per frame
     void Update(){
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
