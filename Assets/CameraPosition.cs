@@ -1,3 +1,10 @@
+/*
+ * Camera position controller position script.
+ * Sets the camera position to near the object this is attached to.
+ * Use the "activity" variable to activate/deactivate the camera position.
+ */
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +33,7 @@ public class CameraPosition : MonoBehaviour{
     [SerializeField] CameraPosition upCam = null;
     [SerializeField] CameraPosition downCam = null;
     [Header("Debug Only... Set the starting position's activity to 1.")]
-    [SerializeField] float activity;
+    [SerializeField] float activity; //How "activated" the camera from the range 0-1. 0 means camera doesn't care, 1 means camera will be at the exact position. Two positions at 0.5 will have the camera in between them.
 
     [SerializeField] StationChunk stationChunk;
 
@@ -39,6 +46,7 @@ public class CameraPosition : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         if(activity == 1f){
+            //If this camera position is the primary one, move it to here,
             cam.transform.position = transform.position;
             cam.transform.rotation = transform.rotation;
             camFocusPosition = focusObject.transform.position;
