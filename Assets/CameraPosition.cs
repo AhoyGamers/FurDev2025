@@ -47,14 +47,7 @@ public class CameraPosition : MonoBehaviour{
     void Start(){
         if(activity == 1f){
             //If this camera position is the primary one, move it to here,
-            cam.transform.position = transform.position;
-            cam.transform.rotation = transform.rotation;
-            camFocusPosition = focusObject.transform.position;
-            camDistance = (focusObject.transform.position - transform.position).magnitude;
-            camRotation = transform.rotation;
-            cam.fieldOfView = fieldOfView;
-            cam.nearClipPlane = minRange;
-            cam.farClipPlane = maxRange;
+            NaturalizeCamera(focusObject.transform);
         }
         if(disableRuntimeRendering){
             foreach (MeshRenderer mr in GetComponentsInChildren<MeshRenderer>()){
@@ -113,6 +106,7 @@ public class CameraPosition : MonoBehaviour{
             return;
         }
         if(activity > 0f){
+            /*
             if(leftCam!=null && Input.GetKeyDown(KeyCode.A)){
                 leftCam.cameraChangedThisFrame = true;
                 leftCam.activity = 1f;
@@ -133,6 +127,7 @@ public class CameraPosition : MonoBehaviour{
                 downCam.activity = 1f;
                 activity = 0f;
             }
+            */
 
             camFocusPosition = Vector3.Lerp(camFocusPosition, focusObject.transform.position, activity*Time.deltaTime*reactionSpeed);
             camDistance = Mathf.Lerp(camDistance, (focusObject.transform.position-transform.position).magnitude, activity*Time.deltaTime*reactionSpeed);
@@ -201,5 +196,16 @@ public class CameraPosition : MonoBehaviour{
         }
         //Gizmos.matrix = transform.localToWorldMatrix;
         //Gizmos.DrawFrustum(Vector3.zero, fieldOfView, maxRange, minRange, aspect);
+    }
+
+    public void NaturalizeCamera(Transform camTransform){
+        cam.transform.position = camTransform.position;
+        cam.transform.rotation = camTransform.rotation;
+        camFocusPosition = focusObject.transform.position;
+        camDistance = (focusObject.transform.position - transform.position).magnitude;
+        camRotation = transform.rotation;
+        cam.fieldOfView = fieldOfView;
+        cam.nearClipPlane = minRange;
+        cam.farClipPlane = maxRange;
     }
 }

@@ -15,7 +15,6 @@ public class DeviceBoxController : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
-        
     }
 
     // Update is called once per frame
@@ -34,6 +33,10 @@ public class DeviceBoxController : MonoBehaviour{
     public bool Close(){
         animator.SetBool("BoolOpen", false);
         return true;
+    }
+
+    public void NaturalizeCamera(){
+        cameraPosition.NaturalizeCamera(transform);
     }
 
     public void SetSelected(bool selected){

@@ -11,10 +11,11 @@ public class ObjectClicker : MonoBehaviour{
 
     [SerializeField] GameObject debugHoveredObject;
     [SerializeField] GameObject debugSelectedObject;
+    static CameraController cameraController;
 
     // Start is called before the first frame update
     void Start(){
-        
+        if(!cameraController) cameraController = Camera.main.gameObject.GetComponent<CameraController>();
     }
 
     public bool hasSelectedObject()
@@ -81,6 +82,20 @@ public class ObjectClicker : MonoBehaviour{
     }
 
     void setSelectedObject(GameObject gameObject){
+        switch(cameraController.cameraMode){
+            case CameraController.CAMERA_MODE.PLAYER:
+                if(gameObject){
+                    gameObject.SendMessage("NaturalizeCamera");
+                    cameraController.cameraMode = CameraController.CAMERA_MODE.MINIGAME;
+                }
+            break;
+            case CameraController.CAMERA_MODE.MINIGAME:
+                if(!gameObject){
+                    cameraController.cameraMode = CameraController.CAMERA_MODE.PLAYER;
+                }
+            break;
+        }
+        
         if(selectedObject){
             selectedObject.SendMessage("SetSelected", false);
 
