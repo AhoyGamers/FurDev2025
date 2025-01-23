@@ -6,7 +6,8 @@ public class SetLifeButton : MonoBehaviour, IPushableButton
 {
    [SerializeField] LifeManager lifeManager;
 
-    public void OnMouseDown(){
+    public void OnMouseDown()
+    {
         lifeManager.SetCenterLight();
     }
 }
