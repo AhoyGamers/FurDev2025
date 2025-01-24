@@ -9,4 +9,15 @@ public class ConfirmLifeButton : MonoBehaviour, IPushableButton
     {
         lifeManager.CheckAnswer();
     }
+
+    public void SetSelected(bool selected)
+    {
+        if(selected){
+            print("The confirm button was selected");
+        }
+        else
+        {
+            print("The confirm button was deselected");
+        }
+    }
 }
