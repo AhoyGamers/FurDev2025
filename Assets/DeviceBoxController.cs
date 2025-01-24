@@ -6,6 +6,7 @@ public class DeviceBoxController : MonoBehaviour{
     [SerializeField] Animator animator;
     [SerializeField] bool selected;
     [SerializeField] CameraPosition cameraPosition;
+    [SerializeField] BoxCollider boxCollider;
 
 
     // Start is called before the first frame update
@@ -24,10 +25,12 @@ public class DeviceBoxController : MonoBehaviour{
 
     public bool Open(){
         animator.SetBool("BoolOpen", true);
+        boxCollider.enabled = false; //Turn off the collider for the outside of the box.
         return true;
     }
     public bool Close(){
         animator.SetBool("BoolOpen", false);
+        boxCollider.enabled = true; //Turn on the collider for the outside of the box.
         return true;
     }
 

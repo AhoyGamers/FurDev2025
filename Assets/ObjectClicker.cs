@@ -44,8 +44,13 @@ public class ObjectClicker : MonoBehaviour{
         }
 
         if(Input.GetMouseButtonDown((int)MouseButton.Left)){
-            setSelectedObject(hoveredObject);
             debugSelectedObject = hoveredObject;
+            if(isObjectAncestor(hoveredObject, selectedObject)){
+                //Current selection is an ancestor of attempted selection. Doing nothing.
+                Debug.Log("ancestor check succeeded.");
+            }else{
+                setSelectedObject(hoveredObject);
+            }
         }else if(Input.GetMouseButtonDown((int)MouseButton.Right)){
             setSelectedObject(null);
             debugSelectedObject = null;
@@ -57,6 +62,12 @@ public class ObjectClicker : MonoBehaviour{
         if(gameObject.CompareTag(tag)) return gameObject;
         if(!(gameObject.transform.parent)) return null;
         return getAncestorWithTag(gameObject.transform.parent.gameObject, tag);
+    }
+
+    bool isObjectAncestor(GameObject child, GameObject ancestor){
+        if(!child || !ancestor) return false;
+        if(child.transform.parent.gameObject == ancestor) return true;
+        return isObjectAncestor(child.transform.parent.gameObject, ancestor);
     }
 
     void setHoveredObject(GameObject gameObject){
@@ -76,6 +87,7 @@ public class ObjectClicker : MonoBehaviour{
     }
 
     void setSelectedObject(GameObject gameObject){
+        if(gameObject == selectedObject) return;
         if(selectedObject){
             selectedObject.SendMessage("SetSelected", false);
             /*
