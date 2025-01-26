@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.iOS;
 
 public class ObjectClicker : MonoBehaviour{
+    [SerializeField] GameManager gameManager;
     static GameObject hoveredObject;
     static GameObject selectedObject;
 
@@ -19,41 +20,43 @@ public class ObjectClicker : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit[] hits = Physics.RaycastAll(ray);
-        float nearestDistance = 0f;
-        GameObject nearestObject = null;
-        foreach(RaycastHit hit in hits){
-            GameObject raycastObject = hit.transform.gameObject;
-            print(raycastObject.name);
-            GameObject selectableGameObject = getAncestorWithTag(raycastObject, "Selectable");
-            if(selectableGameObject){
-                float raycastDistance = (selectableGameObject.transform.position - Camera.main.transform.position).magnitude;
-                if(nearestObject == null || raycastDistance < nearestDistance){
-                    nearestDistance = raycastDistance;
-                    nearestObject = selectableGameObject;
+        if(gameManager.AreControlsActive()){
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit[] hits = Physics.RaycastAll(ray);
+            float nearestDistance = 0f;
+            GameObject nearestObject = null;
+            foreach(RaycastHit hit in hits){
+                GameObject raycastObject = hit.transform.gameObject;
+                print(raycastObject.name);
+                GameObject selectableGameObject = getAncestorWithTag(raycastObject, "Selectable");
+                if(selectableGameObject){
+                    float raycastDistance = (selectableGameObject.transform.position - Camera.main.transform.position).magnitude;
+                    if(nearestObject == null || raycastDistance < nearestDistance){
+                        nearestDistance = raycastDistance;
+                        nearestObject = selectableGameObject;
+                    }
                 }
             }
-        }
-        if(nearestObject){
-            setHoveredObject(nearestObject);
-            debugHoveredObject = nearestObject;
-        }else{
-            setHoveredObject(null);
-            debugHoveredObject = null;
-        }
-
-        if(Input.GetMouseButtonDown((int)MouseButton.Left)){
-            debugSelectedObject = hoveredObject;
-            if(isObjectAncestor(hoveredObject, selectedObject)){
-                //Current selection is an ancestor of attempted selection. Doing nothing.
-                Debug.Log("ancestor check succeeded.");
+            if(nearestObject){
+                setHoveredObject(nearestObject);
+                debugHoveredObject = nearestObject;
             }else{
-                setSelectedObject(hoveredObject);
+                setHoveredObject(null);
+                debugHoveredObject = null;
             }
-        }else if(Input.GetMouseButtonDown((int)MouseButton.Right)){
-            setSelectedObject(null);
-            debugSelectedObject = null;
+
+            if(Input.GetMouseButtonDown((int)MouseButton.Left)){
+                debugSelectedObject = hoveredObject;
+                if(isObjectAncestor(hoveredObject, selectedObject)){
+                    //Current selection is an ancestor of attempted selection. Doing nothing.
+                    Debug.Log("ancestor check succeeded.");
+                }else{
+                    setSelectedObject(hoveredObject);
+                }
+            }else if(Input.GetMouseButtonDown((int)MouseButton.Right)){
+                setSelectedObject(null);
+                debugSelectedObject = null;
+            }
         }
     }
 

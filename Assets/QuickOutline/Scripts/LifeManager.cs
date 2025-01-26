@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class LifeManager : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
     [SerializeField] GameObject[] lightsRow0 = new GameObject[3];
     [SerializeField] GameObject[] lightsRow1 = new GameObject[3]; 
     [SerializeField] GameObject[] lightsRow2 = new GameObject[3];
@@ -42,12 +43,12 @@ public class LifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G)){
-            GenerateLifeGrid();
-        }
-        if(Input.GetKeyDown(KeyCode.C)){
-            CheckAnswer();
-        }
+        // if(Input.GetKeyDown(KeyCode.G)){
+        //     GenerateLifeGrid();
+        // }
+        // if(Input.GetKeyDown(KeyCode.C)){
+        //     CheckAnswer();
+        // }
     }
 
     void GenerateLifeGrid()
@@ -68,7 +69,7 @@ public class LifeManager : MonoBehaviour
             }
         }
         originalMiddleCellState = lifeGrid[1,1];
-        DebugGrid();
+        //DebugGrid();
         CheckNumberOfNeighbors();
     }
 
@@ -176,6 +177,7 @@ public class LifeManager : MonoBehaviour
         else
         {
             Debug.Log("You got it wrong!");
+            gameManager.AddToFailures();
             answerLight.SetWrongLight();
             GenerateLifeGrid();
             return false;

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8cf591fc9ba8ead23bc39a27b5506a37, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -498,6 +498,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 1856639591}
   quitButton: {fileID: 75152926}
+--- !u!1001 &955576418
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3968036955837761442, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_Name
+      value: earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348960166908353816, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f22449b2866bebd9b581d9f930260c2, type: 3}
 --- !u!1 &1021808758
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Placeholder of Damocles
+  m_text: Weapon Orbital
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1149,3 +1206,4 @@ SceneRoots:
   - {fileID: 1287408022}
   - {fileID: 193667721}
   - {fileID: 1811577841}
+  - {fileID: 955576418}
