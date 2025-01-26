@@ -171,6 +171,10 @@ public class LifeManager : MonoBehaviour
         if(lifeGrid[1,1] == answer){
             Debug.Log("You got it right!");
             answerLight.SetCorrectLight();
+            gameManager.AddToSuccesses();
+            GenerateLifeGrid();
+            new WaitForSeconds(1);
+            answerLight.SetNeutralLight();
             return true;
         }
         

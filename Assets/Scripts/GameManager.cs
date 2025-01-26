@@ -4,46 +4,76 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine.Experimental.AI;
 
 public class GameManager : MonoBehaviour
 {   //Parameters
-    [SerializeField] float timeLimit;
+    [SerializeField] float emergencyTimeLimit;
+    [SerializeField] float normalModeTimeLimit;
     [SerializeField] int maxFailures;
+    [SerializeField] int maxSuccesses;
+    [SerializeField] int numberOfTimesMessageIsFlashed;
     
     //Manager References
     [SerializeField] LifeManager lifeManager;
     
-    //Other references
+    [Header("UI Panel References")]
     [SerializeField] GameObject gameOverPanel;
-    
+    [SerializeField] GameObject alertPanel;
+    [SerializeField] GameObject[] puzzleManagers;
+
     //State
+    [Header("States")]
     [SerializeField] int currentFailures = 0;
-    [SerializeField] float currentTimeSinceStartOfScene = 0f;
+    [SerializeField] int currentSuccesses = 0;
+    [SerializeField] float currentTimeSinceStartOfNormalPhase = 0f;
+    [SerializeField] float currentTimeSinceStartOfEmergencyPhase = 0f;
     [SerializeField] bool controlsActive = false;
+    [SerializeField] bool emergencyState = false;
 
     void Start()
     {
         controlsActive = true;
-        StartCoroutine("StartGameTimer");
+        StartCoroutine(StartNormalGameTimer());
     }
     void Update()
     {
+        //Give player time to explore. Once time is up, then move into emergency mode and activate a puzzle.
+        if(!emergencyState && currentTimeSinceStartOfNormalPhase >= normalModeTimeLimit){ 
+            emergencyState = true;
+            StopNormalGameTimer(); 
+            StartCoroutine(StartEmergencyGameTimer());
+            StartCoroutine(ShowAlertPanel());
+        } 
+
+        else if (emergencyState && currentSuccesses >= maxSuccesses) //If we succeed at our puzzles, we move into normal mode.
+        {
+            emergencyState = false;
+            StopEmergencyGameTime();
+            StartCoroutine(StartNormalGameTimer());
+            currentFailures = 0;
+            currentSuccesses = 0;
+        }  
         //Gameover Via failures
-        if(currentFailures > maxFailures || currentTimeSinceStartOfScene > timeLimit)
+        else if(currentFailures >= maxFailures || currentTimeSinceStartOfEmergencyPhase > emergencyTimeLimit)
         {
             print("You have lost.");
             DisableControls();
             ShowGameOverText();
         }
-
-        //Once loss condition is hit, disable controls, pop up game over text.
-        //else if victory condition is met, (currently) enter cooldown time.
     }
     public void AddToFailures(){
         currentFailures++;
     }
     public void RemoveFromFailures(){
         currentFailures--;
+    }
+
+    public void AddToSuccesses(){
+        currentSuccesses++;
     }
 
     public bool AreControlsActive(){
@@ -57,15 +87,51 @@ public class GameManager : MonoBehaviour
         controlsActive = true;
     }
 
+    //This is called via a Try Again or Restart button.
+    public void RestartGame(){
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene);
+    }
+
     private void ShowGameOverText()
     {
         gameOverPanel.SetActive(true);
     }
 
-    private IEnumerator StartGameTimer(){
+    private IEnumerator StartNormalGameTimer(){
         while(true){
             yield return new WaitForSeconds(1);
-            currentTimeSinceStartOfScene++;
+            currentTimeSinceStartOfNormalPhase++;
         }
+    }
+
+    private void StopNormalGameTimer(){
+        StopCoroutine("StartNormalGameTimer");
+        currentTimeSinceStartOfNormalPhase = 0f;
+    }
+
+    private IEnumerator StartEmergencyGameTimer(){
+        while(true){
+            yield return new WaitForSeconds(1);
+            currentTimeSinceStartOfEmergencyPhase++;
+        }
+    }
+
+    private void StopEmergencyGameTime()
+    {
+        StopCoroutine("StartEmergencyGameTimer");
+        currentTimeSinceStartOfEmergencyPhase = 0f;
+    }
+
+    private IEnumerator ShowAlertPanel(){
+        int messageDisplayed = 0;
+        while(messageDisplayed < numberOfTimesMessageIsFlashed){
+            alertPanel.SetActive(true);
+            yield return new WaitForSeconds(1);
+            alertPanel.SetActive(false);
+            messageDisplayed++;
+            yield return new WaitForSeconds(2);
+        }
+        StopCoroutine(ShowAlertPanel());        
     }
 }

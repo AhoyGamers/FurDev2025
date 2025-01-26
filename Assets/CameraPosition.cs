@@ -6,6 +6,8 @@ using UnityEditor;
 using UnityEngine;
 
 public class CameraPosition : MonoBehaviour{
+    [Header("Game Manager")]
+    [SerializeField] GameManager gameManager;
     [Header("Primary Settings")]
     [Tooltip("The camera we are controlling.")]
     [SerializeField] Camera cam;
@@ -97,6 +99,14 @@ public class CameraPosition : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
+        Debug.Log("The Controls are: " + gameManager.AreControlsActive());
+        if(gameManager.AreControlsActive()){
+            MoveCamera();
+        }
+    }
+
+    void MoveCamera()
+    {
         if(alignRotationToFocusObject && focusObject!=null){
             transform.rotation = Quaternion.LookRotation(focusObject.transform.position - transform.position, Vector3.up);
         }
@@ -104,7 +114,8 @@ public class CameraPosition : MonoBehaviour{
             cameraChangedThisFrame = false;
             return;
         }
-        if(activity > 0f){
+        
+        if(activity > 0f && gameManager.AreControlsActive()){
             if(leftCam!=null && Input.GetKeyDown(KeyCode.A)){
                 leftCam.cameraChangedThisFrame = true;
                 leftCam.activity = 1f;
