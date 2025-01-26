@@ -1598,6 +1598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8073430218549039057}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 6329154140261980599}
 --- !u!1 &3235531079659462270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3315866376862681885, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -8712,6 +8714,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8497501743987754308}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 795513880910996637}
 --- !u!4 &3234049825636074491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -8835,6 +8839,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2072153990434906258}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 1750375708580303901}
 --- !u!4 &5720310232414434565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -8984,6 +8990,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3785382377471721925}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 4585579577774861873}
 --- !u!4 &5432931936742291946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -9133,6 +9141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1339888496871958719}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 1902930771133255605}
 --- !u!4 &6540899646046563993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -9282,6 +9292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7032200737646083560}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 5868869855638051123}
 --- !u!4 &6554550795834467533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -9457,6 +9469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3570761170579109044}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 2662349763248460596}
 --- !u!4 &8835841643737836505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
@@ -9606,6 +9620,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6472165323476368807}
   selected: 0
+  cameraPosition: {fileID: 0}
+  boxCollider: {fileID: 8429845657729050668}
 --- !u!4 &8786339997934412316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7116341c4594d1c428bcf6438f35773c, type: 3}
