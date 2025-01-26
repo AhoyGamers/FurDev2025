@@ -49,4 +49,7 @@ public class AudioManager : MonoBehaviour
         string eventPath = $"event:/SFX/{soundName}";
         FMODUnity.RuntimeManager.PlayOneShot(eventPath);
     }
+
+    public static void PlayDigitalEnterSFX() => FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/digital_button_enter");
+    public static void PlayMechPressSFX() => FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/mech_button_press");
 }

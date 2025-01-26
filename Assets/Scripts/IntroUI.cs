@@ -13,11 +13,12 @@ public class IntroUI : MonoBehaviour
         startButton.onClick.AddListener(startGame);
         quitButton.onClick.AddListener(quitGame);
 
-        AudioManager.StartBGM("test_bgm");
+        AudioManager.StartBGM("rest");
     }
 
     private void startGame()
     {
+        AudioManager.PlayMechPressSFX();
         LoadFirstLevel();
         AudioManager.StopBGM();
     }

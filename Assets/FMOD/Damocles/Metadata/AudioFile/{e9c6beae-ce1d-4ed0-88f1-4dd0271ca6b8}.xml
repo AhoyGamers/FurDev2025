@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e9c6beae-ce1d-4ed0-88f1-4dd0271ca6b8}">
+		<property name="assetPath">
+			<value>Enter - Digital SFX.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.4179591836734694</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{07605ddd-2dc9-4538-9c85-f0676991afa4}</destination>
+		</relationship>
+	</object>
+</objects>

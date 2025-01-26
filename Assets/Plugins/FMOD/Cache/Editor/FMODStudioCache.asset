@@ -15,12 +15,12 @@ MonoBehaviour:
   Path: Assets/FMOD/Damocles/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638735110418054727
+  lastModified: 638735187134132742
   FileSizes:
   - Name: Desktop
-    Value: 864032
+    Value: 2322720
   Exists: 1
---- !u!114 &-4066301160559766005
+--- !u!114 &-863292966117990280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,23 +30,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BGM/test_bgm
+  m_Name: event:/SFX/mech_button_press
   m_EditorClassIdentifier: 
-  Path: event:/BGM/test_bgm
+  Path: event:/SFX/mech_button_press
   Guid:
-    Data1: -917521255
-    Data2: 1239142087
-    Data3: -1964429438
-    Data4: -1433984173
+    Data1: -1661063851
+    Data2: 1193836195
+    Data3: 1916541373
+    Data4: -1000422632
   Banks:
   - {fileID: -8172045129557187272}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 69841
+  Length: 315
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,14 +63,70 @@ MonoBehaviour:
   - {fileID: 8551207327655686384}
   - {fileID: -8172045129557187272}
   EditorEvents:
-  - {fileID: -4066301160559766005}
+  - {fileID: 8543263375973593367}
+  - {fileID: -863292966117990280}
+  - {fileID: 6941751547759006750}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8172045129557187272}
   StringsBanks:
   - {fileID: 8551207327655686384}
-  cacheTime: 638735110418070115
+  cacheTime: 638735187134172973
   cacheVersion: 131622
+--- !u!114 &6941751547759006750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/digital_button_enter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/digital_button_enter
+  Guid:
+    Data1: -1626355503
+    Data2: 1194113222
+    Data3: 171324848
+    Data4: -16931680
+  Banks:
+  - {fileID: -8172045129557187272}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 367
+--- !u!114 &8543263375973593367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/rest
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/rest
+  Guid:
+    Data1: -917521255
+    Data2: 1239142087
+    Data3: -1964429438
+    Data4: -1433984173
+  Banks:
+  - {fileID: -8172045129557187272}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 178337
 --- !u!114 &8551207327655686384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,8 +142,8 @@ MonoBehaviour:
   Path: Assets/FMOD/Damocles/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638735110418070115
+  lastModified: 638735187134172973
   FileSizes:
   - Name: Desktop
-    Value: 762
+    Value: 884
   Exists: 1
