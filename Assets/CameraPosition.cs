@@ -99,7 +99,6 @@ public class CameraPosition : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        Debug.Log("The Controls are: " + gameManager.AreControlsActive());
         if(gameManager.AreControlsActive()){
             MoveCamera();
         }

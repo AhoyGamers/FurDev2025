@@ -173,8 +173,6 @@ public class LifeManager : MonoBehaviour
             answerLight.SetCorrectLight();
             gameManager.AddToSuccesses();
             GenerateLifeGrid();
-            new WaitForSeconds(1);
-            answerLight.SetNeutralLight();
             return true;
         }
         
@@ -214,15 +212,5 @@ public class LifeManager : MonoBehaviour
         {
             neighbors += 1;
         }
-    }
-
-    void TurnOnAnswerLight()
-    {
-
-    }
-
-    void TurnOffAnswerLight()
-    {
-
     }
 }
