@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
 
     /// <summary>
     /// Loads a background music (BGM) event instance for the specified song name.
+    /// Available names: "rest", "low", "middle" and "high".
     /// </summary>
     /// <param name="songName">The name of the song to load.</param>
     /// <returns>A new instance of FMOD.Studio.EventInstance for the specified BGM.</returns>

@@ -15,12 +15,68 @@ MonoBehaviour:
   Path: Assets/FMOD/Damocles/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638735187134132742
+  lastModified: 638738929561592794
   FileSizes:
   - Name: Desktop
-    Value: 2322720
+    Value: 3817152
   Exists: 1
---- !u!114 &-863292966117990280
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8551207327655686384}
+  - {fileID: -8172045129557187272}
+  EditorEvents:
+  - {fileID: 4821026553969281595}
+  - {fileID: 2573259675031204454}
+  - {fileID: 3356258070206097158}
+  - {fileID: 2376030299732820343}
+  - {fileID: 4505045853451551980}
+  - {fileID: 8922408620219265998}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8172045129557187272}
+  StringsBanks:
+  - {fileID: 8551207327655686384}
+  cacheTime: 638738929561638047
+  cacheVersion: 131622
+--- !u!114 &2376030299732820343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/high
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/high
+  Guid:
+    Data1: 533665720
+    Data2: 1129844786
+    Data3: 46737340
+    Data4: 180070727
+  Banks:
+  - {fileID: -8172045129557187272}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25542
+--- !u!114 &2573259675031204454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,60 +103,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 315
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 8551207327655686384}
-  - {fileID: -8172045129557187272}
-  EditorEvents:
-  - {fileID: 8543263375973593367}
-  - {fileID: -863292966117990280}
-  - {fileID: 6941751547759006750}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -8172045129557187272}
-  StringsBanks:
-  - {fileID: 8551207327655686384}
-  cacheTime: 638735187134172973
-  cacheVersion: 131622
---- !u!114 &6941751547759006750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/digital_button_enter
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/digital_button_enter
-  Guid:
-    Data1: -1626355503
-    Data2: 1194113222
-    Data3: 171324848
-    Data4: -16931680
-  Banks:
-  - {fileID: -8172045129557187272}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 367
---- !u!114 &8543263375973593367
+--- !u!114 &3356258070206097158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,6 +130,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 178337
+--- !u!114 &4505045853451551980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/digital_button_enter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/digital_button_enter
+  Guid:
+    Data1: -1626355503
+    Data2: 1194113222
+    Data3: 171324848
+    Data4: -16931680
+  Banks:
+  - {fileID: -8172045129557187272}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 367
+--- !u!114 &4821026553969281595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/low
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/low
+  Guid:
+    Data1: -311673013
+    Data2: 1275654066
+    Data3: -1233035118
+    Data4: 1951904205
+  Banks:
+  - {fileID: -8172045129557187272}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 59872
 --- !u!114 &8551207327655686384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,8 +199,35 @@ MonoBehaviour:
   Path: Assets/FMOD/Damocles/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638735187134172973
+  lastModified: 638738929561638047
   FileSizes:
   - Name: Desktop
-    Value: 884
+    Value: 1002
   Exists: 1
+--- !u!114 &8922408620219265998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BGM/middle
+  m_EditorClassIdentifier: 
+  Path: event:/BGM/middle
+  Guid:
+    Data1: -897516828
+    Data2: 1126011215
+    Data3: 1524279948
+    Data4: -180668929
+  Banks:
+  - {fileID: -8172045129557187272}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
