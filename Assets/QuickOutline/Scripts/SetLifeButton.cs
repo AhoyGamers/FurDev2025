@@ -8,6 +8,6 @@ public class SetLifeButton : MonoBehaviour, IPushableButton
 
     public void OnMouseDown()
     {
-        lifeManager.SetCenterLight();
+        lifeManager.SetAnswerLight();
     }
 }

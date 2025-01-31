@@ -7,6 +7,6 @@ public class UnsetLifeButton : MonoBehaviour, IPushableButton
    [SerializeField] LifeManager lifeManager;
     public void OnMouseDown()
     {
-        lifeManager.UnsetCenterLight();
+        lifeManager.UnsetAnswerlight();
     }
 }

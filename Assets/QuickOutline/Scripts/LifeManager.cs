@@ -17,7 +17,8 @@ public class LifeManager : MonoBehaviour
     [SerializeField] SetLifeButton setButton;
     [SerializeField] UnsetLifeButton unSetButton;
     [SerializeField] AnswerLight answerLight;
-    
+    [SerializeField] float flashTimeout = 1f;
+    bool controlsEnabled = true;
     //Conways game of life has the following rules:
     //(1) Any live cell with fewer than two neighbors dies
     //(2) Any cell with two or three neighbors live
@@ -131,6 +132,14 @@ public class LifeManager : MonoBehaviour
         lifeGrid[1,1] = false;
     }
 
+    public void SetAnswerLight(){
+        answerLight.SetLightLit();
+    }
+
+    public void UnsetAnswerlight(){
+        answerLight.SetLightUnlit();
+    }
+
     public bool CheckAnswer()
     {
         //When the confirm button is pressed, we are checking for the result of the NEXT generation.
@@ -168,9 +177,9 @@ public class LifeManager : MonoBehaviour
             }
         }
 
-        if(lifeGrid[1,1] == answer){
+        if(answerLight.IsLightLit() == answer){
             Debug.Log("You got it right!");
-            answerLight.SetCorrectLight();
+            StartCoroutine(answerLight.FlashCorrect(flashTimeout));
             gameManager.AddToSuccesses();
             GenerateLifeGrid();
             return true;
@@ -180,7 +189,7 @@ public class LifeManager : MonoBehaviour
         {
             Debug.Log("You got it wrong!");
             gameManager.AddToFailures();
-            answerLight.SetWrongLight();
+            StartCoroutine(answerLight.FlashIncorrect(flashTimeout));
             GenerateLifeGrid();
             return false;
         }
