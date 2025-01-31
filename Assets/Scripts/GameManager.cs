@@ -5,9 +5,6 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine.Experimental.AI;
 
 public class GameManager : MonoBehaviour
 {   //Parameters

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.iOS;
 
 public class ObjectClicker : MonoBehaviour{
     [SerializeField] GameManager gameManager;
