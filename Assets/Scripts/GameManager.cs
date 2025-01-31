@@ -58,9 +58,10 @@ public class GameManager : MonoBehaviour
         {
             emergencyState = false;
             StopEmergencyGameTimer();
-            StartCoroutine(normalTimerCoRoutine);
             currentFailures = 0;
             currentSuccesses = 0;
+            StartCoroutine(normalTimerCoRoutine);
+            
         }  
         //Gameover Via failures
         else if(currentFailures >= maxFailures || currentTimeSinceStartOfEmergencyPhase >= emergencyTimeLimit)
