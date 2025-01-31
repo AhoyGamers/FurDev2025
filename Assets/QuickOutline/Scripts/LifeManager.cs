@@ -30,8 +30,8 @@ public class LifeManager : MonoBehaviour
     //Set turns it on, unset turns it off.
     //When player hits bottom check button, they will see if the center light is correct for the current step.
     private bool[,] lifeGrid = new bool[3,3];
-    int neighbors = 0;
-    bool originalMiddleCellState = true;
+    [SerializeField]int neighbors = 0;
+    [SerializeField]bool originalMiddleCellState = true;
     
     
     void Start()
@@ -153,25 +153,25 @@ public class LifeManager : MonoBehaviour
         bool answer  = false;
         if(originalMiddleCellState == true) //if the cell was alive at generation
         {
-            if (neighbors < 2)
+            if (neighbors <=3)
             {
                 answer = false;
             }
 
-            else if(neighbors >= 2 && neighbors <= 3)
+            else if(neighbors >= 4)
             {
                 answer = true;
-            }
-
-            else if (neighbors > 3)
-            {
-                answer = false;
             }
         }
 
         else if(originalMiddleCellState  == false) //if cell was dead at generation
         {
-            if(neighbors == 3)
+            if (neighbors <=3)
+            {
+                answer = false;
+            }
+            
+            else if(neighbors >= 4)
             {
                 answer = true;
             }
@@ -198,6 +198,7 @@ public class LifeManager : MonoBehaviour
 
     void CheckNumberOfNeighbors()
     {
+        neighbors = 0;
         for(int i = 0; i < lifeGrid.GetLength(1); i++)
         {
             //sum row 0 and 2's neighbors first.
@@ -212,12 +213,12 @@ public class LifeManager : MonoBehaviour
             } 
         }
 
-        if(lifeGrid[1, 0])
+        if(lifeGrid[1, 0] == true)
         {
             neighbors += 1;
         } 
 
-        if (lifeGrid[1, 2])
+        if (lifeGrid[1, 2] == true)
         {
             neighbors += 1;
         }
